@@ -1,2 +1,3 @@
 # jsdoc-test
-A cool React component
+
+Run jsdoc style docs as tests
