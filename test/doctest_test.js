@@ -13,7 +13,7 @@ describe('Doctest', () => {
       expect( exampleLineNumbers[0] ).to.equal(6)
       expect( exampleLineNumbers[1] ).to.equal(9)
       expect( exampleLineNumbers[2] ).to.equal(26)
-      expect( exampleLineNumbers[3] ).to.equal(44)
+      expect( exampleLineNumbers[3] ).to.equal(48)
     })
   })
 

@@ -1,4 +1,4 @@
-// This is an example of a string class
+// This is an example of a string helper module
 
 /**
  * Returns a word with all letter downcases except the first letter
@@ -26,7 +26,11 @@ export function titleize(word) {
  * @return {object} Useless information
  * @example
  * stringData('woah')
- * //=> { length: 4, vowels: 2, consonants: 2  }
+ * //=> { 
+ *   length: 4, 
+ *   vowels: 2, 
+ *   consonants: 2  
+ * }
  */
 function stringData(string) {
   const vowels = string.toLowerCase().split('').filter(char => ['a', 'e', 'i', 'o', 'u', 'y'].find(v => char === v) ).length
