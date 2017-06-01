@@ -8,7 +8,6 @@ const env = process.env.NODE_ENV || 'development'
 const prod = env === 'production'
 
 const devEntries = [
-  'react-hot-loader/patch',
   `webpack-dev-server/client?http://localhost:${port}`,
   'webpack/hot/only-dev-server',
    path.join(__dirname, 'demo', 'main.js'),
@@ -49,7 +48,7 @@ module.exports = {
       'src',
       'demo',
     ],
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js'],
   },
   resolveLoader: {
     modules: [path.join(__dirname, 'node_modules')],
@@ -57,6 +56,14 @@ module.exports = {
   plugins: plugins,
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        include: /flexboxgrid/,
+      },
       {
         test: /\.scss$/,
         use: [
@@ -66,7 +73,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         use: ['babel-loader'],
         include: [path.join(__dirname, 'src'), path.join(__dirname, 'demo')],
         exclude: /node_modules/,
