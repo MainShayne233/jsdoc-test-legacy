@@ -11,8 +11,9 @@ function expectedReturnValue(file, exampleIndex) {
 }
 
 function returnValueString(file, exampleIndex) {
+  const lines = file.split("\n")
   while(true) {
-    const line = file.split("\n")[exampleIndex]
+    const line = lines[exampleIndex]
     if (line === undefined) throw(new Error('could not find expected return for example (expected return denoated by //=>)'))
     else if(line.indexOf('//=>') !== -1) return line
     else exampleIndex++
