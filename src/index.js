@@ -6,7 +6,7 @@ function exampleFunctionReturnValue(modulePath, file, index) {
   try {
    return eval( evalString )
   } catch(error) {
-    throw(new Error(`Could not eval ${evalString}`))
+    throw(new Error(`Failed to eval function return value: ${evalString}`))
   } 
 }
 
@@ -15,7 +15,7 @@ function expectedReturnValue(file, exampleIndex) {
   try {
     return eval(`( ${string} )`)
   } catch(e) {
-    throw(new Error(`Failed to eval string to value: ${string}`))
+    throw(new Error(`Failed to eval expected return value string: ${string}`))
   }
 }
 
