@@ -1,7 +1,7 @@
 {
   "name": "jsdoc-test",
   "version": "0.0.1",
-  "description": "Test jsdoc style docs",
+  "description": "Test JSDoc style doc examples in your test suite",
   "entry": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --watch-stdin --colors",
@@ -26,6 +26,7 @@
     "babel-core": "^6.17.0",
     "babel-jest": "^20.0.1",
     "babel-loader": "^6.2.5",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-0": "^6.3.13",
