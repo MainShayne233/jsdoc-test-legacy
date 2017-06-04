@@ -53,17 +53,26 @@ And this will run and test all instances of `@example` in the given file
 
 ## Testing Function
 
-By default, `jsdoctest` will pass both the expected return value, and actual return
-value of your example into a basic [chai](https://github.com/chaijs/chai) expect.
+By default, `jsdoctest` will use a basic [chai](https://github.com/chaijs/chai)
+expect as its testing function.
 ```javascript
-expect( actualReturnValue ).to.eql( expectedReturnValue )
+it(`${functionName} should match its doc example value`, () => {
+  expect(actualReturnValue).to.eql(expectedReturnValue)
+})
 ```
 
-But this function can be overridden by any function that takes two arguments.
+But this function can be overridden by any function that takes three arguments:
+
+`(functionName, actualReturnValue, expectedReturnValue)`.
 ```javascript
 describe('stringData Doctests', () => {
   jsdoctest('src/string/index.js', {
-    testingFunction: (actual, expected) => { console.log( actual === expected) }
+    testingFunction: (functionName, actual, expected) => {
+      if (actual === expected)
+        console.log(functionName + ', you did it!')
+      else
+        console.log('Better luck next time, ' + functionName)
+    }
   })
 })
 ```
