@@ -1,3 +1,4 @@
 # jsdoc-test
 
-Run jsdoc style docs as tests
+Run jsdoc style doc examples as tests
+

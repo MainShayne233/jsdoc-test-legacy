@@ -25,14 +25,16 @@ export function titleize(word) {
  * @param {string} string - The string of disinterest
  * @return {object} Useless information
  * @example
- * stringData('woah')
+ * stringData(
+ *   'woah'
+ * )
  * //=> { 
  *   length: 4, 
  *   vowels: 2, 
  *   consonants: 2  
  * }
  */
-function stringData(string) {
+export function stringData(string) {
   const vowels = string.toLowerCase().split('').filter(char => ['a', 'e', 'i', 'o', 'u', 'y'].find(v => char === v) ).length
   return {
     length: string.length,
