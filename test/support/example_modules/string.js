@@ -5,7 +5,7 @@
  * @param {string} word - The word to be titleized
  * @return {string} The string titlelized
  * @example
- * titelize('wOaH')
+ * titleize('wOaH')
  * //=> 'Woah'
  * @example
  * titelize('w')

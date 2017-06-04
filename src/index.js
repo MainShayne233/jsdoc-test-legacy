@@ -44,7 +44,26 @@ function returnValueString(file, index) {
   return returnValueLines.join("\n")
 }
 
-function exampleFunctionReturnValue(module, )
+function exampleFunctionReturnValue(modulePath, file, index) {
+  const functionCallString = functionCallStringFor(file, index)
+  const evalString = `require('../${modulePath}').${functionCallString}`
+  try {
+   return eval( evalString )
+  } catch(error) {
+    throw(new Error(`Could not eval ${evalString}`))
+  } 
+}
+
+function functionCallStringFor(file, index) {
+  const fileLines = file.split("\n")
+  let functionCallLines = []
+  index += 1
+  while (!stringContains(fileLines[index], expectedReturnStartDelimiter)) {
+    functionCallLines.push( fileLines[index] )
+    index += 1
+  }
+  return functionCallLines.map(line => removeSubStrings(line, ['*']).trim() ).join("\n")
+}
 
 function removeSubStrings(string, substrings) {
   if (substrings.length === 0) return string
@@ -67,4 +86,5 @@ function stringContains(string, substring) {
 module.exports = {
   exampleLineNumbers,
   expectedReturnValue,
+  exampleFunctionReturnValue,
 }

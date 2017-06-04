@@ -11,8 +11,8 @@ describe('Doctest', () => {
   describe('exampelFunctionReturnValue/3', () => {
 
     it('should return the result of calling the example function', () => {
-      const functionCallResult = doctest.exampelFunctionReturnValue(
-        stringModule,
+      const functionCallResult = doctest.exampleFunctionReturnValue(
+        stringModulePath,
         stringModuleFile,
         6
       )
