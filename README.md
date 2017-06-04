@@ -49,7 +49,7 @@ describe('stringData Doctests', () => {
 })
 ```
 
-And this will run and test all `@example`s in the given file
+And this will run and test all instances of `@example` in the given file
 
 ## Testing Function
 
