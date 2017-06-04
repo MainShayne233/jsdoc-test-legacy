@@ -22,6 +22,10 @@ function functionCallStringFor(file, index) {
   return functionCallLines.map(line => removeSubStrings(line, ['*']).trim() ).join("\n")
 }
 
+function exampleFunctionNameFor(file, index) {
+  return functionCallStringFor(file, index).split('(')[0]
+}
+
 function returnValueStringFor(file, index) {
   let returnValueLines = []
   const lines = file.split("\n")
@@ -50,6 +54,7 @@ function returnValueStringFor(file, index) {
 
 module.exports = {
   exampleLineNumbersFor,
+  exampleFunctionNameFor,
   functionCallStringFor,
   returnValueStringFor,
 }
