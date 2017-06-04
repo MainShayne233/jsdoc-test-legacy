@@ -2,9 +2,23 @@ import { expect } from 'chai'
 import fs from 'fs'
 import doctest from '../src'
 
-const stringModuleFile = fs.readFileSync('test/support/example_modules/string.js', 'utf8')
+const stringModulePath = 'test/support/example_modules/string.js'
+const stringModuleFile = fs.readFileSync(stringModulePath, 'utf8')
+const stringModule = require('../' + stringModulePath)
 
 describe('Doctest', () => {
+
+  describe('exampelFunctionReturnValue/3', () => {
+
+    it('should return the result of calling the example function', () => {
+      const functionCallResult = doctest.exampelFunctionReturnValue(
+        stringModule,
+        stringModuleFile,
+        6
+      )
+      expect( functionCallResult ).to.equal('Woah')
+    })
+  })
 
   describe('exampleLineNumbers/1', () => {
     it('returns a list of line numbers that have @example in them', () => {

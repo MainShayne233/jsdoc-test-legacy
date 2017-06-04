@@ -44,6 +44,8 @@ function returnValueString(file, index) {
   return returnValueLines.join("\n")
 }
 
+function exampleFunctionReturnValue(module, )
+
 function removeSubStrings(string, substrings) {
   if (substrings.length === 0) return string
   return removeSubStrings(
