@@ -40,6 +40,8 @@ export function stringData(string) {
 }
 ```
 
+Note: You can have as many `@examples` as you'd like for any one function.
+
 Import the jsdoctest function in your test suite and point it at the file.
 ```javascript
 import jsdoctest from 'jsdoc-test'
