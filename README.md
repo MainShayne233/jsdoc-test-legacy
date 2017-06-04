@@ -20,9 +20,7 @@ Write a function with a [JSDoc style documentation](http://usejsdoc.org/about-ge
  * @param {string} string - The string of disinterest
  * @return {object} Useless information
  * @example
- * stringData(
- *   'woah'
- * )
+ * stringData('woah')
  * //=>
  * {
  *   length: 4,
