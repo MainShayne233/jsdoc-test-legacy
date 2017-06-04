@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import fs from 'fs'
-import doctest from '../src'
+import evaluators from '../src/evaluators'
 
 const stringModulePath = 'test/support/example_modules/string.js'
 const stringModuleFile = fs.readFileSync(stringModulePath, 'utf8')
@@ -11,7 +11,7 @@ describe('Doctest', () => {
   describe('exampelFunctionReturnValue/3', () => {
 
     it('should return the result of calling the example function', () => {
-      const functionCallResult = doctest.exampleFunctionReturnValue(
+      const functionCallResult = evaluators.exampleFunctionReturnValue(
         stringModulePath,
         stringModuleFile,
         6
@@ -21,13 +21,14 @@ describe('Doctest', () => {
   })
 
   describe('expectedReturnValue/2', () => {
+
     it('should return the expected return value for the when the function returns a string', () => {
-      const expectedReturnValue = doctest.expectedReturnValue(stringModuleFile, 6)
+      const expectedReturnValue = evaluators.expectedReturnValue(stringModuleFile, 6)
       expect( expectedReturnValue ).to.equal('Woah')
     })
 
     it('should return the expected return value for the when the function returns an object', () => {
-      const expectedReturnValue = doctest.expectedReturnValue(stringModuleFile, 26)
+      const expectedReturnValue = evaluators.expectedReturnValue(stringModuleFile, 26)
       expect( expectedReturnValue.constructor ).to.equal(Object)
       expect( expectedReturnValue.length ).to.equal(4)
       expect( expectedReturnValue.vowels ).to.equal(2)
@@ -35,7 +36,7 @@ describe('Doctest', () => {
     })
 
     it('should return the expected return value for the when the function returns an array', () => {
-      const expectedReturnValue = doctest.expectedReturnValue(stringModuleFile, 44)
+      const expectedReturnValue = evaluators.expectedReturnValue(stringModuleFile, 44)
       expect( expectedReturnValue.constructor ).to.equal(Array)
       expect( expectedReturnValue[0] ).to.equal('why')
       expect( expectedReturnValue[1] ).to.equal('am')
