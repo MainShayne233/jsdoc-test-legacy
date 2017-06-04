@@ -20,17 +20,6 @@ describe('Doctest', () => {
     })
   })
 
-  describe('exampleLineNumbers/1', () => {
-    it('returns a list of line numbers that have @example in them', () => {
-      const exampleLineNumbers = doctest.exampleLineNumbers(stringModuleFile)
-      expect( exampleLineNumbers.length ).to.equal(4)
-      expect( exampleLineNumbers[0] ).to.equal(6)
-      expect( exampleLineNumbers[1] ).to.equal(9)
-      expect( exampleLineNumbers[2] ).to.equal(26)
-      expect( exampleLineNumbers[3] ).to.equal(48)
-    })
-  })
-
   describe('expectedReturnValue/2', () => {
     it('should return the expected return value for the when the function returns a string', () => {
       const expectedReturnValue = doctest.expectedReturnValue(stringModuleFile, 6)

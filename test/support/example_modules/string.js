@@ -8,7 +8,7 @@
  * titleize('wOaH')
  * //=> 'Woah'
  * @example
- * titelize('w')
+ * titleize('w')
  * //=> 'W'
  */
 export function titleize(word) {
