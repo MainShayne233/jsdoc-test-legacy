@@ -2,6 +2,8 @@
 
 Run [JSDoc](http://usejsdoc.org/about-getting-started.html) style doc examples as tests within your test suite
 
+[![Build Status](https://travis-ci.org/MainShayne233/jsdoc-test.svg?branch=master)](https://travis-ci.org/MainShayne233/jsdoc-test)
+
 ## Usage
 
 Install in your project
