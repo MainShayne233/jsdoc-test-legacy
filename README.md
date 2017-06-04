@@ -2,6 +2,7 @@
 
 Run [JSDoc](http://usejsdoc.org/about-getting-started.html) style doc examples as tests within your test suite
 
+Inspired by [Elixir Doctests](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html)
 
 [![npm version](https://badge.fury.io/js/jsdoc-test.svg)](https://badge.fury.io/js/jsdoc-test)
 [![Build Status](https://travis-ci.org/MainShayne233/jsdoc-test.svg?branch=master)](https://travis-ci.org/MainShayne233/jsdoc-test)
