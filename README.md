@@ -48,6 +48,7 @@ describe('stringData Doctests', () => {
   jsdoctest('src/string/index.js') // path is relative to root of directory
 })
 ```
+And this will run and test all `@example`s in the given file
 
 ## Testing Function
 
