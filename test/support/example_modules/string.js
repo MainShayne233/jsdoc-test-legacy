@@ -28,14 +28,16 @@ export function titleize(word) {
  * stringData(
  *   'woah'
  * )
- * //=> { 
- *   length: 4, 
- *   vowels: 2, 
- *   consonants: 2  
+ * //=> {
+ *   length: 4,
+ *   vowels: 2,
+ *   consonants: 2
  * }
  */
 export function stringData(string) {
-  const vowels = string.toLowerCase().split('').filter(char => ['a', 'e', 'i', 'o', 'u', 'y'].find(v => char === v) ).length
+  const vowels = string.toLowerCase().split('').filter(char => {
+    return ['a', 'e', 'i', 'o', 'u', 'y'].find(v => char === v)
+  }).length
   return {
     length: string.length,
     vowels: vowels,
